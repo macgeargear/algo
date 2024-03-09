@@ -1,0 +1,59 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+    "theme": "Gruvbox Light Hard",
+    "base_keymap": "VSCode",
+    "languages": {
+        "C++": {
+            "show_copilot_suggestions": false,
+            "tab_size": 4
+        },
+        "Rust": {
+            "show_copilot_suggestions": false,
+            "tab_size": 4,
+            "enable_language_server": true
+        },
+        "TSX": {
+            "tab_size": 2
+        }
+    },
+    "copilot": {
+        "disabled_globs": [
+            ".env",
+            "/Users/macgeargear/learn/cp-algo/"
+        ]
+    },
+    "lsp": {
+        "rust-analyzer": {
+            "command": [
+                "/Users/macgeargear/.cargo/bin/rust-analyzer"
+            ]
+        },
+        "clangd": {
+            "command": [
+                "/usr/local/opt/llvm/bin/clangd"
+            ]
+        }
+    },
+    "ui_font_size": 18,
+    "buffer_font_size": 18,
+    "autosave": "on_focus_change",
+    "ui_font_family": "JetBrainsMono Nerd Font",
+    "ui_font_features": "JetBrainsMono Nerd Font",
+    "buffer_font_family": "JetBrainsMono Nerd Font",
+    "terminal": {
+        "dock": "right",
+        "font_size": 22,
+        "font_family": "Hack Nerd Font Mono",
+        "font_features": "Hack Nerd Font Mono"
+    },
+    "tab_size": 4,
+    "vim_mode": true,
+    "vim_mode_keymap": "VSCode"
+}

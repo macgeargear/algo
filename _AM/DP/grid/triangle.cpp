@@ -4,6 +4,9 @@
 
 using namespace std;
 
+int triangle2(vector<vector<int>> &grid) {
+}
+
 int triangle(vector<vector<int>> grid) {
     int n = grid.size();
     int m = grid[n - 1].size();

@@ -1,31 +1,28 @@
 #include <iostream>
 using namespace std;
+using ll = long long;
 
-int i = 0;
+int size(int n) {
+    if (n <= 1)
+        return 1;
+    return size(n / 2) + 1 + size(n / 2);
+}
+
 int cnt = 0;
-void solve(int n, int l, int r) {
-    if (n == 1 || n == 0) {
-        i++;
-        if (i > r)
-            return;
-        if (i >= l && i <= r)
-            cnt += n == 1;
-        return;
-    }
-
-    solve(n / 2, l, r);
-    i++;
-    if (i > r)
-        return;
-    if (i >= l && l < r) {
-        cnt += n % 2 == 1;
-    }
-    solve(n / 2, l, r);
+int solve(int n, int l, int r) {
+    int s = size(n / 2);
+    if (l > r)
+        return 0;
+    if (n == 1)
+        return 1;
+    if (r <= s)
+        return solve(n / 2, l, r);
+    if (l >= s + 2)
+        return solve(n / 2, l - s + 1, r - s - 1);
+    return n % 2 + solve(n / 2, l, s) + solve(n / 2, 1, r - s - 1);
 }
 
 int main() {
     int n, l, r;
     cin >> n >> l >> r;
-    solve(n, l, r);
-    cout << cnt << "\n";
 }
